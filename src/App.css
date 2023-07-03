@@ -1,0 +1,13 @@
+body{
+  background-color: #f3f3f3;
+}
+.app{
+  display: grid;
+  grid-template-columns: 3% 94% 3%;
+}
+h2{
+  margin: 0;
+}
+p{
+  margin: 0;
+}

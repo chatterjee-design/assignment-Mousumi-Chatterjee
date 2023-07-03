@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+/* ===================Main container=================*/
+.main-container{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: grid;
+    min-width: 100%;
+    margin: 13px 0;
+    height: 30rem;
+    background-color: white;
+    overflow: scroll;
+    grid-template-rows: 1fr;
+    align-items: center;
+    padding-top: 2rem ;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+.main-container label{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+
+/* ===================Loader=================*/
+.loader {
+    border: 5px solid #f3f3f3; 
+    border-top: 5px solid #e08095; 
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    animation: spin 2s linear infinite;
+  }
+.spinner{
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+  /* ===================content=================*/
+  .contents{
+    grid-template-columns: repeat(1, 22rem 22rem 22rem);
+    justify-content: space-evenly;
+    display: grid;
+    row-gap: 2rem;
+    place-items: center;
+  }
+  .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    background: rgba(255, 254, 254, 0.26);
+    width: 90%;
+    transition: transform 0.4s;
+    cursor: pointer;
+    gap: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-family: 'Playfair Display', serif;
+  }
+.content:hover{
+  transform: scale(1.03);
+  background: rgba(215, 215, 215, 0.26);
+}
+ /* ===================content img=================*/
+.content img{
+  width:16rem;
+  height: 16rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border-radius: 10px;
+}
+.content img:hover{
+  box-shadow: none;
+}
+
+
+/* ===================media=================*/
+@media only screen and  (max-width:399px ){
+  /* For mobile phones: */
+  .contents{
+    grid-template-columns: repeat(1, 22rem );
+  }
+  .content img{
+    width: 10rem;
+    height: 10rem;
+  }
+  .content{
+    width: 80%;
+  }
+  .main-container label{
+    font-size: .9rem;
+    text-align: center;
+  }
+}
+@media only screen and (min-width:400px ) and (max-width:640px ){
+  /* For big mobile phones: */
+  .contents{
+    grid-template-columns: repeat(1, 22rem );
+  }
+  .main-container label{
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+@media only screen and (min-width:641px ) and (max-width:800px ){
+  /* For tab: */
+  .contents{
+    grid-template-columns: repeat(1, 22rem  );
+  }
+  .main-container label{
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width:799px ) and (max-width:1160px ){
+  /* For bigger than tab: */
+  .contents{
+    grid-template-columns: repeat(1, 22rem 22rem );
+  }
+}
